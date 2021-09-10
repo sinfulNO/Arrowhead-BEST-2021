@@ -15,7 +15,7 @@
  * or the VEX Competition Switch in the operator control mode. If the robot is disabled or
  * communications is lost, the operator control task will be stopped by the kernel. Re-enabling
  * the robot will restart the task, not resume it from where it left off.
- *
+ *jkhjkhjkjk
  * If no VEX Competition Switch or Field Management system is plugged in, the VEX Cortex will
  * run the operator control task. Be warned that this will also occur if the VEX Cortex is
  * tethered directly to a computer via the USB A to A cable without any VEX Joystick attached.
@@ -35,15 +35,15 @@ void motorSet ( unsigned char channel,  // motor channel to set from 1-10
               );
 
 void operatorControl() {
-  int left;
-  int right;
+  int power;
+  int turn;
     while (1) {
-        left = joystickGetAnalog(1, 3); // vertical axis on left joystick
-        right  = joystickGetAnalog(1, 2); // horizontal axis on left joystick
-        motorSet(2, right); // set left wheels
-        motorSet(3, right); // set left wheels
-        motorSet(4, -left); // set right wheels
-        motorSet(5, -left); // set right wheels
+        power = joystickGetAnalog(1, 3); // vertical axis on left joystick
+        turn  = joystickGetAnalog(1, 1); // horizontal axis on left joystick
+        motorSet(2, power - turn); // set left wheels
+        motorSet(3, power - turn); // set left wheels
+        motorSet(4, -power - turn); // set right wheels
+        motorSet(5, -power - turn); // set right wheels
         delay(20);
     }
 }
