@@ -24,11 +24,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpwsxlj0fs/auto.c.o",
-            "src\\auto.c"
+            "C:/Users/spots/AppData/Local/Temp/tmpdvu6h_e1/init.c.o",
+            "src\\init.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
-        "file": "src\\auto.c"
+        "file": "src\\init.c"
     },
     {
         "arguments": [
@@ -55,11 +55,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpwsxlj0fs/init.c.o",
-            "src\\init.c"
+            "C:/Users/spots/AppData/Local/Temp/tmpdvu6h_e1/auto.c.o",
+            "src\\auto.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
-        "file": "src\\init.c"
+        "file": "src\\auto.c"
     },
     {
         "arguments": [
