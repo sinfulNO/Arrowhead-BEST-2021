@@ -24,7 +24,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpksc_im7e/init.c.o",
+            "bin/init.c.o",
             "src\\init.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
@@ -55,7 +55,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpksc_im7e/auto.c.o",
+            "bin/auto.c.o",
             "src\\auto.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
@@ -86,7 +86,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpksc_im7e/opcontrol.c.o",
+            "bin/opcontrol.c.o",
             "src\\opcontrol.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
