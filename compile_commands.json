@@ -24,11 +24,11 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/init.c.o",
-            "src\\init.c"
+            "C:/Users/spots/AppData/Local/Temp/tmpi6i8qwpy/opcontrol.c.o",
+            "src\\opcontrol.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
-        "file": "src\\init.c"
+        "file": "src\\opcontrol.c"
     },
     {
         "arguments": [
@@ -55,7 +55,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/auto.c.o",
+            "C:/Users/spots/AppData/Local/Temp/tmpi6i8qwpy/auto.c.o",
             "src\\auto.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
@@ -86,10 +86,10 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "bin/opcontrol.c.o",
-            "src\\opcontrol.c"
+            "C:/Users/spots/AppData/Local/Temp/tmpi6i8qwpy/init.c.o",
+            "src\\init.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
-        "file": "src\\opcontrol.c"
+        "file": "src\\init.c"
     }
 ]

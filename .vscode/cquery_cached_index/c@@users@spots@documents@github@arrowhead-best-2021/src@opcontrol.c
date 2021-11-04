@@ -43,12 +43,5 @@ void operatorControl() {
         motorSet(2, -power - turn); // set left wheels
         motorSet(3, -power + turn); // set right wheels
         delay(20);
-
-        if(joystickGetDigital(1, 8, JOY_UP)) {
-          motorSet(4, 127);
-        }
-        else{
-          motorSet(4, -127);
-        }
     }
 }
