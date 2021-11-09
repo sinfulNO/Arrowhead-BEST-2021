@@ -51,6 +51,15 @@ void operatorControl() {
         else {
           motorStop(4);
         }
+        if(joystickGetDigital(1, 5, JOY_UP)) {
+          motorSet(5, 127);
+        }
+        else if(joystickGetDigital(1, 5, JOY_DOWN)){
+          motorSet(5, -127);
+        }
+        else {
+          motorStop(5);
+        }
         delay(20);
     }
 }
