@@ -39,6 +39,12 @@ void chasisSet(double left, double right) {
   motorSet(3, right);
 }
 
+void autonomousBEST() {
+  chasisSet(127, 127);
+  delay(1000);
+  chasisSet(0, 0);
+}
+
 void operatorControl() {
   int left;
   int right;
@@ -76,9 +82,7 @@ void operatorControl() {
           motorStop(4);
         }
         if(joystickGetDigital(1, 7, JOY_UP) && joystickGetDigital(1, 8, JOY_UP)) { //autonomous code
-          chasisSet(127, 127);
-          delay(1000);
-          chasisSet(0, 0);
+          autonomousBEST();
         }
         delay(20);
     }
