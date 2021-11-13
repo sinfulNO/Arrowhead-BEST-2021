@@ -56,7 +56,7 @@ void operatorControl() {
         else {
           right = 0;
         }
-        chasisSet(left, right);
+        chasisSet(left, right); // set chasis from joystck
         if(joystickGetDigital(1, 6, JOY_UP)) {
           motorSet(4, 127);
         }
@@ -65,9 +65,7 @@ void operatorControl() {
         }
         else {
           motorStop(4);
-        }
-        // code for left forklift
-
+        } // code for left forklift
         if(joystickGetDigital(1, 5, JOY_UP)) {
           motorSet(5, -127);
         }
@@ -76,9 +74,7 @@ void operatorControl() {
         }
         else {
           motorStop(5);
-        }
-        // code for right forklift
-
+        } // code for right forklift
         delay(20);
     }
 }
