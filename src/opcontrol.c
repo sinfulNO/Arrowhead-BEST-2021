@@ -44,7 +44,7 @@ void autonomousBEST() {
   motorSet(4, -127);
   delay(500);
   motorSet(4, 0);
-  delay(1600);
+  delay(1800);
   chasisSet(0, 0);
   motorSet(4, 127);
   delay(700);
