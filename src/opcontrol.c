@@ -41,7 +41,16 @@ void chasisSet(double left, double right) {
 
 void autonomousBEST() {
   chasisSet(127, 127);
-  delay(1000);
+  motorSet(4, -127);
+  delay(500);
+  motorSet(4, 0);
+  delay(1500);
+  chasisSet(0, 0);
+  motorSet(4, 127);
+  delay(500);
+  motorSet(4, 0);
+  chasisSet(-127, -127);
+  delay(2000);
   chasisSet(0, 0);
 }
 
