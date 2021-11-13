@@ -34,14 +34,18 @@ void motorSet ( unsigned char channel,  // motor channel to set from 1-10
                 int speed               // new signed speed. -127 is full reverse, 127 full forward, 0 off
               );
 
+void chasisSet(double left, double right) {
+  motorSet(2, left);
+  motorSet(3, right);
+}
+
 void operatorControl() {
-  int power;
-  int turn;
+  int left;
+  int right;
     while (1) {
-        power = joystickGetAnalog(1, 2); // vertical axis on right joystick
-        turn  = joystickGetAnalog(1, 4); // horizontal axis on left joystick
-        motorSet(2, power + turn); // set left wheels
-        motorSet(3, power - turn); // set right wheels
+        left = joystickGetAnalog(1, 3); // vertical axis on left joystick
+        right  = joystickGetAnalog(1, 2); // vertical axis on right joystick
+        chasisSet(left, right);
         if(joystickGetDigital(1, 6, JOY_UP)) {
           motorSet(4, 127);
         }
@@ -55,7 +59,7 @@ void operatorControl() {
           motorSet(5, -127);
         }
         else if(joystickGetDigital(1, 5, JOY_DOWN)){
-          motorSet(5, 127);
+          motorSet(5, -127);
         }
         else {
           motorStop(5);

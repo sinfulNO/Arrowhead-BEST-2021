@@ -24,7 +24,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpi6i8qwpy/auto.c.o",
+            "C:/Users/spots/AppData/Local/Temp/tmp_aonkcar/auto.c.o",
             "src\\auto.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
@@ -55,7 +55,7 @@
             "-fdiagnostics-color",
             "-std=gnu99",
             "-o",
-            "C:/Users/spots/AppData/Local/Temp/tmpi6i8qwpy/init.c.o",
+            "C:/Users/spots/AppData/Local/Temp/tmp_aonkcar/init.c.o",
             "src\\init.c"
         ],
         "directory": "C:\\Users\\spots\\Documents\\GitHub\\Arrowhead-BEST-2021",
