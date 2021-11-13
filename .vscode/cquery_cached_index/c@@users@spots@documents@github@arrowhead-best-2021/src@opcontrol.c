@@ -42,9 +42,20 @@ void chasisSet(double left, double right) {
 void operatorControl() {
   int left;
   int right;
+  int deadband = 10;
     while (1) {
-        left = joystickGetAnalog(1, 3); // vertical axis on left joystick
-        right  = joystickGetAnalog(1, 2); // vertical axis on right joystick
+        if(joystickGetAnalog(1,3) >= deadband || joystickGetAnalog(1,3) <= -deadband) {
+          left = joystickGetAnalog(1, 3); // vertical axis on left joystick
+        }
+        else {
+          left = 0;
+        }
+        if(joystickGetAnalog(1,2) >= deadband || joystickGetAnalog(1,2) <= -deadband) {
+          right  = joystickGetAnalog(1, 2); // vertical axis on right joystick
+        }
+        else {
+          right = 0;
+        }
         chasisSet(left, right);
         if(joystickGetDigital(1, 6, JOY_UP)) {
           motorSet(4, 127);
