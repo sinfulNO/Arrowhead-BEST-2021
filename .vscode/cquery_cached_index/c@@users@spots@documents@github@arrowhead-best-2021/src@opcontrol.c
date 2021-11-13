@@ -56,7 +56,12 @@ void operatorControl() {
         else {
           right = 0;
         }
+<<<<<<< HEAD
         chasisSet(left, right); // set chasis from joystck
+=======
+        chasisSet(left, right); // set chasis from joystick
+
+>>>>>>> d7a6ba19f1fdf49856e0a4d3cd7cb4b6c37a660d
         if(joystickGetDigital(1, 6, JOY_UP)) {
           motorSet(4, 127);
         }
