@@ -55,6 +55,8 @@ void operatorControl() {
         else {
           motorStop(4);
         }
+        // code for left forklift
+
         if(joystickGetDigital(1, 5, JOY_UP)) {
           motorSet(5, -127);
         }
@@ -64,6 +66,8 @@ void operatorControl() {
         else {
           motorStop(5);
         }
+        // code for right forklift
+
         delay(20);
     }
 }
