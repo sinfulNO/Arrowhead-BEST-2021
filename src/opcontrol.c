@@ -71,7 +71,7 @@ void operatorControl() {
         else {
           right = 0;
         }
-        chasisSet(left, right); // set chasis from joystck
+        chassisSet(left, right); // set chasis from joystck
         if(joystickGetDigital(1, 5, JOY_UP)) {  // code for left forklift
           motorSet(5, -127);
         }
