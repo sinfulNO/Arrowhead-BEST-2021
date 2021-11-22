@@ -34,24 +34,24 @@ void motorSet ( unsigned char channel,  // motor channel to set from 1-10
                 int speed               // new signed speed. -127 is full reverse, 127 full forward, 0 off
               );
 
-void chasisSet(double left, double right) {
+void chassisSet(double left, double right) {
   motorSet(2, left);
   motorSet(3, right);
 }
 
 void autonomousBEST() {
-  chasisSet(83, 127);
+  chassisSet(83, 127);
   motorSet(4, -127);
   delay(500);
   motorSet(4, 0);
   delay(1800);
-  chasisSet(0, 0);
+  chassisSet(0, 0);
   motorSet(4, 127);
   delay(700);
   motorSet(4, 10);
-  chasisSet(-75, -75);
+  chassisSet(-75, -75);
   delay(3500);
-  chasisSet(0, 0);
+  chassisSet(0, 0);
 }
 
 void operatorControl() {
