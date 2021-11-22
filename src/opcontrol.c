@@ -28,7 +28,7 @@
  */
 
 int joystickGetAnalog ( unsigned char joystick,   // the joystick slot to check (1 for master, 2 for partner)
-                         unsigned char axis        // One of the joystick channels on a VEX Joystick: 1, 2, 3, 4, ACCEL_X, or ACCEL_Y
+                         unsigned char axis       // One of the joystick channels on a VEX Joystick: 1, 2, 3, 4, ACCEL_X, or ACCEL_Y
                        );
 void motorSet ( unsigned char channel,  // motor channel to set from 1-10
                 int speed               // new signed speed. -127 is full reverse, 127 full forward, 0 off
@@ -59,13 +59,13 @@ void operatorControl() {
   int right;
   int deadband = 10;
     while (1) {
-        if(joystickGetAnalog(1,3) >= deadband || joystickGetAnalog(1,3) <= -deadband) {
+        if(joystickGetAnalog(1,3) >= deadband || joystickGetAnalog(1,3) <= -deadband) { // deadbanding code for left joystick
           left = joystickGetAnalog(1, 3); // vertical axis on left joystick
         }
         else {
           left = 0;
         }
-        if(joystickGetAnalog(1,2) >= deadband || joystickGetAnalog(1,2) <= -deadband) {
+        if(joystickGetAnalog(1,2) >= deadband || joystickGetAnalog(1,2) <= -deadband) { // deadbanding code for right joystick
           right  = joystickGetAnalog(1, 2); // vertical axis on right joystick
         }
         else {
@@ -90,7 +90,7 @@ void operatorControl() {
         else {
           motorStop(4);
         }
-        if(joystickGetDigital(1, 7, JOY_UP) && joystickGetDigital(1, 8, JOY_UP)) { //autonomous code
+        if(joystickGetDigital(1, 7, JOY_UP) && joystickGetDigital(1, 8, JOY_UP)) { // autonomous code trigering
           autonomousBEST();
         }
         delay(20);

@@ -28,7 +28,7 @@
  */
 
 int joystickGetAnalog ( unsigned char joystick,   // the joystick slot to check (1 for master, 2 for partner)
-                         unsigned char axis        // One of the joystick channels on a VEX Joystick: 1, 2, 3, 4, ACCEL_X, or ACCEL_Y
+                         unsigned char axis       // One of the joystick channels on a VEX Joystick: 1, 2, 3, 4, ACCEL_X, or ACCEL_Y
                        );
 void motorSet ( unsigned char channel,  // motor channel to set from 1-10
                 int speed               // new signed speed. -127 is full reverse, 127 full forward, 0 off
@@ -39,30 +39,49 @@ void chasisSet(double left, double right) {
   motorSet(3, right);
 }
 
+void autonomousBEST() {
+  chasisSet(83, 127);
+  motorSet(4, -127);
+  delay(500);
+  motorSet(4, 0);
+  delay(1800);
+  chasisSet(0, 0);
+  motorSet(4, 127);
+  delay(700);
+  motorSet(4, 10);
+  chasisSet(-75, -75);
+  delay(3500);
+  chasisSet(0, 0);
+}
+
 void operatorControl() {
   int left;
   int right;
   int deadband = 10;
     while (1) {
-        if(joystickGetAnalog(1,3) >= deadband || joystickGetAnalog(1,3) <= -deadband) {
+        if(joystickGetAnalog(1,3) >= deadband || joystickGetAnalog(1,3) <= -deadband) { // deadbanding code for left joystick
           left = joystickGetAnalog(1, 3); // vertical axis on left joystick
         }
         else {
           left = 0;
         }
-        if(joystickGetAnalog(1,2) >= deadband || joystickGetAnalog(1,2) <= -deadband) {
+        if(joystickGetAnalog(1,2) >= deadband || joystickGetAnalog(1,2) <= -deadband) { // deadbanding code for right joystick
           right  = joystickGetAnalog(1, 2); // vertical axis on right joystick
         }
         else {
           right = 0;
         }
-<<<<<<< HEAD
         chasisSet(left, right); // set chasis from joystck
-=======
-        chasisSet(left, right); // set chasis from joystick
-
->>>>>>> d7a6ba19f1fdf49856e0a4d3cd7cb4b6c37a660d
-        if(joystickGetDigital(1, 6, JOY_UP)) {
+        if(joystickGetDigital(1, 5, JOY_UP)) {  // code for left forklift
+          motorSet(5, -127);
+        }
+        else if(joystickGetDigital(1, 5, JOY_DOWN)){
+          motorSet(5, 127);
+        }
+        else {
+          motorStop(5);
+        }
+        if(joystickGetDigital(1, 6, JOY_UP)) { // code for right forklift
           motorSet(4, 127);
         }
         else if(joystickGetDigital(1, 6, JOY_DOWN)){
@@ -70,16 +89,10 @@ void operatorControl() {
         }
         else {
           motorStop(4);
-        } // code for left forklift
-        if(joystickGetDigital(1, 5, JOY_UP)) {
-          motorSet(5, -127);
         }
-        else if(joystickGetDigital(1, 5, JOY_DOWN)){
-          motorSet(5, -127);
+        if(joystickGetDigital(1, 7, JOY_UP) && joystickGetDigital(1, 8, JOY_UP)) { // autonomous code trigering
+          autonomousBEST();
         }
-        else {
-          motorStop(5);
-        } // code for right forklift
         delay(20);
     }
 }
