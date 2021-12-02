@@ -82,10 +82,10 @@ void operatorControl() {
           motorStop(5);
         }
         if(joystickGetDigital(1, 6, JOY_UP)) { // code for right forklift
-          motorSet(4, 127);
+          motorSet(4, -127);
         }
         else if(joystickGetDigital(1, 6, JOY_DOWN)){
-          motorSet(4, -127);
+          motorSet(4, 127);
         }
         else {
           motorStop(4);
