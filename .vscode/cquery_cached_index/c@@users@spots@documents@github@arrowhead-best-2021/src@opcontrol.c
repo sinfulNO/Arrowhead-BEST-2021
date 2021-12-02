@@ -41,14 +41,14 @@ void chassisSet(double left, double right) {
 
 void autonomousBEST() {
   chassisSet(83, 127);
-  motorSet(4, -127);
+  motorSet(5, -127);
   delay(500);
-  motorSet(4, 0);
+  motorSet(5, 0);
   delay(1800);
   chassisSet(0, 0);
-  motorSet(4, 127);
+  motorSet(5, 127);
   delay(700);
-  motorSet(4, 10);
+  motorSet(5, 10);
   chassisSet(-75, -75);
   delay(3500);
   chassisSet(0, 0);
@@ -72,7 +72,7 @@ void operatorControl() {
           right = 0;
         }
         chassisSet(left, right); // set chasis from joystck
-        if(joystickGetDigital(1, 5, JOY_UP)) {  // code for left forklift
+        if(joystickGetDigital(1, 5, JOY_UP)) {  // code for small forklift
           motorSet(5, -127);
         }
         else if(joystickGetDigital(1, 5, JOY_DOWN)){
@@ -81,7 +81,7 @@ void operatorControl() {
         else {
           motorStop(5);
         }
-        if(joystickGetDigital(1, 6, JOY_UP)) { // code for right forklift
+        if(joystickGetDigital(1, 6, JOY_UP)) { // code for big forklift
           motorSet(4, -127);
         }
         else if(joystickGetDigital(1, 6, JOY_DOWN)){
